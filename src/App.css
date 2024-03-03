@@ -1,18 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 }
 
+html {
+	font-family: 'Madimi One', sans-serif;
+	scroll-behavior: smooth;
+}
+
+.folder-area-header {
+	margin-bottom: 6px;
+}
+
 .folder {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 }
 .folder-name {
+	width: max-content;
 	border: 1px solid #dfdfdf;
-	padding: 6px;
+	padding: 10px 12px;
 	font-size: 12px;
 	line-height: 12px;
-	background-color: #dfdfdf;
+	background-color: #000000;
+	color: white;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	gap: 6px;
+	svg {
+		width: 10px;
+		height: 10px;
+		fill: white;
+	}
 }
 .folder-child {
-	margin-left: 16px;
-	border-left: 4px solid #999999;
+	padding-left: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 }

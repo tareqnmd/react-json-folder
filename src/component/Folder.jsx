@@ -1,18 +1,30 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import BoxShowIcon from './icons/BoxShowIcon';
+import MinusIcon from './icons/MinusIcon';
+import PlusIcon from './icons/PlusIcon';
 const Folder = ({ folder }) => {
 	const [expand, setExpand] = useState(false);
 	return (
 		<div className="folder">
-			<strong
+			<div
 				className="folder-name"
 				onClick={() => setExpand((prev) => !prev)}
 			>
-				{folder.name}
-			</strong>
-			{expand && (
+				{folder?.child?.length > 0 ? (
+					expand ? (
+						<MinusIcon />
+					) : (
+						<PlusIcon />
+					)
+				) : (
+					<BoxShowIcon />
+				)}
+				{folder.title}
+			</div>
+			{expand && folder?.child?.length > 0 && (
 				<div className="folder-child">
-					{folder.items.map((item) => (
+					{folder?.child?.map((item) => (
 						<Folder
 							key={item.id}
 							folder={item}
